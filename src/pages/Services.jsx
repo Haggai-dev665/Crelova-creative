@@ -31,27 +31,27 @@ export default function Services() {
           </p>
           <ul className={styles.list}>
             <li className={styles.listItem}>
-              <span className={`material-icons ${styles.listIcon}`}>check_circle</span>
+              <span className={`material-symbols-outlined ${styles.listIcon}`}>check_circle</span>
               <span className={styles.listText}>Digital Marketing</span>
             </li>
             <li className={styles.listItem}>
-              <span className={`material-icons ${styles.listIcon}`}>check_circle</span>
+              <span className={`material-symbols-outlined ${styles.listIcon}`}>check_circle</span>
               <span className={styles.listText}>Web Development & Digital Solutions</span>
             </li>
             <li className={styles.listItem}>
-              <span className={`material-icons ${styles.listIcon}`}>check_circle</span>
+              <span className={`material-symbols-outlined ${styles.listIcon}`}>check_circle</span>
               <span className={styles.listText}>Graphic Design & Content Creation</span>
             </li>
             <li className={styles.listItem}>
-              <span className={`material-icons ${styles.listIcon}`}>check_circle</span>
+              <span className={`material-symbols-outlined ${styles.listIcon}`}>check_circle</span>
               <span className={styles.listText}>Search Engine Optimization (SEO) & SEM</span>
             </li>
             <li className={styles.listItem}>
-              <span className={`material-icons ${styles.listIcon}`}>check_circle</span>
+              <span className={`material-symbols-outlined ${styles.listIcon}`}>check_circle</span>
               <span className={styles.listText}>Email Marketing</span>
             </li>
             <li className={styles.listItem}>
-              <span className={`material-icons ${styles.listIcon}`}>check_circle</span>
+              <span className={`material-symbols-outlined ${styles.listIcon}`}>check_circle</span>
               <span className={styles.listText}>Social Media Marketing & Management</span>
             </li>
           </ul>
@@ -60,20 +60,20 @@ export default function Services() {
         <section className={styles.servicesGrid}>
           <div className={`${styles.card} ${styles.cardStandard}`}>
             <div className={`${styles.cardIconWrapper} ${styles.cardIconStandard}`}>
-              <span className="material-icons">search</span>
+                <span className="material-symbols-outlined">search</span>
             </div>
             <h3 className={styles.cardTitle}>Search Engine Optimization</h3>
             <p className={styles.cardDesc}>Dominate search rankings and drive organic traffic with high-intent keyword strategies.</p>
             <div className={styles.cardLink}>
               Learn More
-              <span className={`material-icons ${styles.cardLinkIcon}`}>chevron_right</span>
+              <span className={`material-symbols-outlined ${styles.cardLinkIcon}`}>chevron_right</span>
             </div>
           </div>
           
           <div className={`${styles.card} ${styles.cardFeatured}`}>
             <div className={styles.featuredHeader}>
               <div className={`${styles.cardIconWrapper} ${styles.cardIconFeatured}`} style={{ marginBottom: 0 }}>
-                <span className="material-icons">ads_click</span>
+                <span className="material-symbols-outlined">ads_click</span>
               </div>
               <span className={styles.featuredBadge}>Popular</span>
             </div>
@@ -81,19 +81,19 @@ export default function Services() {
             <p className={styles.cardDesc}>Instant visibility and lead generation through targeted Google and Meta ad campaigns.</p>
             <div className={styles.cardLink}>
               Learn More
-              <span className={`material-icons ${styles.cardLinkIcon}`}>chevron_right</span>
+              <span className={`material-symbols-outlined ${styles.cardLinkIcon}`}>chevron_right</span>
             </div>
           </div>
           
           <div className={`${styles.card} ${styles.cardStandard}`}>
             <div className={`${styles.cardIconWrapper} ${styles.cardIconStandard}`}>
-              <span className="material-icons">share</span>
+                <span className="material-symbols-outlined">share</span>
             </div>
             <h3 className={styles.cardTitle}>Social Media Marketing</h3>
             <p className={styles.cardDesc}>Building communities and brand loyalty through strategic content and engagement.</p>
             <div className={styles.cardLink}>
               Learn More
-              <span className={`material-icons ${styles.cardLinkIcon}`}>chevron_right</span>
+              <span className={`material-symbols-outlined ${styles.cardLinkIcon}`}>chevron_right</span>
             </div>
           </div>
         </section>

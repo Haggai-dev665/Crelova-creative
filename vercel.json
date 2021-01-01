@@ -1,23 +1,11 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "trailingSlash": false,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/",
+      "source": "/(.*)",
       "destination": "/index.html"
-    },
-    {
-      "source": "/about",
-      "destination": "/about.html"
-    },
-    {
-      "source": "/services",
-      "destination": "/ourservice.html"
-    },
-    {
-      "source": "/contact",
-      "destination": "/contact.html"
     }
   ],
   "headers": [

@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/jpeg" href="assets/logo.jpg"/>
+<title>Crelova creative - Transforming Vision into Reality</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- Canvas Confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#EFE9E3",
+                        "secondary": "#D9CFC7",
+                        "accent": "#A8BBA3",
+                        "surface": "#ECF4E8",
+                        "background-light": "#EFE9E3",
+                        "background-dark": "#000000"
+                    }
+                }
+            }
+        };
+
+        // Confetti color configuration
+        confetti.shapeFactory = () => {
+            const colors = ['#A8BBA3', '#D9CFC7', '#EFE9E3', '#ECF4E8'];
+            return confetti.shapeFromPath({ path: 'M0,0 L2,2 L0,2 Z', matrix: [1,0,0,1,0,0] });
+        };
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        .float-animation-delayed {
+            animation: float 3s ease-in-out infinite 1.5s;
+        }
+        .rotate-slow {
+            animation: rotate 20s linear infinite;
+        }
+        .card-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .card-shine::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(168, 187, 163, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .card-shine:hover::before {
+            left: 100%;
+        }
+        .scale-hover {
+            transition: transform 0.3s ease;
+        }
+        .scale-hover:hover {
+            transform: scale(1.02);
+        }
+        .confetti {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            opacity: 0.8;
+            animation: float 6s ease-in-out infinite;
+        }
+        .confetti-blue { background: #A8BBA3; }
+        .confetti-yellow { background: #ECF4E8; }
+        .confetti-green { background: #D9CFC7; }
+    </style>
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 border-b border-secondary/60 justify-between">
+<div class="flex items-center gap-2">
+<img src="assets/logo.jpg" alt="Crelova creative Logo" class="h-10 w-auto rounded-lg"/>
+<a href="index.html" class="text-black text-lg font-bold leading-tight tracking-tight hover:text-accent transition-colors">Crelova creative</a>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a href="index.html" class="text-black text-sm font-medium hover:text-accent transition-colors">Home</a>
+<a href="about.html" class="text-black text-sm font-medium hover:text-accent transition-colors">About</a>
+<a href="ourservice.html" class="text-black text-sm font-medium hover:text-accent transition-colors">Services</a>
+<a href="contact.html" class="text-black text-sm font-medium hover:text-accent transition-colors">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<a href="contact.html" class="hidden md:block bg-black hover:bg-black/90 text-white text-sm font-bold py-2 px-4 rounded-lg transition-colors">
+                    Get Started
+                </a>
+<!-- Hamburger Menu Button -->
+<button id="mobile-menu-button" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
+<span class="w-6 h-0.5 bg-black transition-all duration-300"></span>
+<span class="w-6 h-0.5 bg-black transition-all duration-300"></span>
+<span class="w-6 h-0.5 bg-black transition-all duration-300"></span>
+</button>
+</div>
+</header>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-300">
+<div class="flex flex-col h-full">
+<div class="flex items-center justify-between p-4 border-b border-secondary/60">
+<div class="flex items-center gap-2">
+<img src="assets/logo.jpg" alt="Crelova creative Logo" class="h-10 w-auto rounded-lg"/>
+<span class="text-black text-lg font-bold">Crelova creative</span>
+</div>
+<button id="mobile-menu-close" class="p-2" aria-label="Close menu">
+<span class="material-symbols-outlined text-black text-3xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-6 gap-4">
+<a href="index.html" class="text-black text-lg font-medium hover:text-accent transition-colors py-3 border-b border-secondary/30">Home</a>
+<a href="about.html" class="text-black text-lg font-medium hover:text-accent transition-colors py-3 border-b border-secondary/30">About</a>
+<a href="ourservice.html" class="text-black text-lg font-medium hover:text-accent transition-colors py-3 border-b border-secondary/30">Services</a>
+<a href="contact.html" class="text-black text-lg font-medium hover:text-accent transition-colors py-3 border-b border-secondary/30">Contact</a>
+<a href="contact.html" class="bg-accent hover:bg-accent/90 text-black text-base font-bold py-3 px-6 rounded-lg transition-colors text-center mt-4">
+Get Started
+</a>
+</nav>
+</div>
+</div>
+<!-- HeroSection with Static Confetti Effect -->
+<main class="flex-1">
+<div class="@container">
+<div class="relative overflow-hidden">
+<!-- Static Geometric Elements (Confetti) -->
+<div class="confetti confetti-blue top-10 left-[10%] rotate-12"></div>
+<div class="confetti confetti-yellow top-24 left-[80%] rotate-45"></div>
+<div class="confetti confetti-green top-60 left-[15%] rotate-[30deg]"></div>
+<div class="confetti confetti-blue bottom-20 left-[70%] -rotate-12"></div>
+<div class="confetti confetti-yellow bottom-10 left-[5%] rotate-12"></div>
+<div class="confetti confetti-green top-1/2 left-[90%] rotate-90"></div>
+<div class="@[480px]:p-4">
+<div class="flex min-h-[520px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:rounded-xl items-start justify-end px-6 pb-12 @[480px]:px-12" data-alt="Modern high-tech office interior with large windows and team desks" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%), url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop");'>
+<div class="flex flex-col gap-3 text-left max-w-xl">
+<span class="text-primary font-bold tracking-widest uppercase text-xs">Transforming Vision into Reality</span>
+<h1 class="text-white text-4xl font-black leading-tight tracking-tight @[480px]:text-6xl">
+                                    Empowering Brands with Cutting-Edge Digital Strategies
+                                </h1>
+<p class="text-white/90 text-base font-normal leading-relaxed @[480px]:text-lg">
+                                    We are dedicated to transforming your vision into a successful reality through innovative digital marketing solutions.
+                                </p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button onclick="confetti({particleCount: 100, spread: 70, origin: { y: 0.6 }})" class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-accent text-black text-base font-bold leading-normal tracking-wide transition-all active:scale-95 hover:shadow-lg hover:shadow-secondary/60">
+                                    Work With Us
+                                </button>
+<a href="ourservice.html" class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-white/10 text-white text-base font-bold leading-normal tracking-wide border border-white/20 backdrop-blur-sm transition-all hover:bg-white/20">
+                                    Our Case Studies
+                                </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Bar -->
+<div class="flex flex-wrap gap-4 p-4 mt-2">
+<div class="flex min-w-[158px] flex-1 flex-col gap-1 rounded-xl p-5 bg-white border border-secondary/60 shadow-sm">
+<p class="text-black/70 text-xs font-bold uppercase tracking-wider">Experience</p>
+<p class="text-black tracking-tight text-2xl font-black leading-tight">500+</p>
+<p class="text-black/60 text-xs">Projects Delivered</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-1 rounded-xl p-5 bg-white border border-secondary/60 shadow-sm">
+<p class="text-black/70 text-xs font-bold uppercase tracking-wider">Retention</p>
+<p class="text-black tracking-tight text-2xl font-black leading-tight">98%</p>
+<p class="text-black/60 text-xs">Client Satisfaction</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-1 rounded-xl p-5 bg-white border border-secondary/60 shadow-sm">
+<p class="text-black/70 text-xs font-bold uppercase tracking-wider">Managed</p>
+<p class="text-black tracking-tight text-2xl font-black leading-tight">$10M+</p>
+<p class="text-black/60 text-xs">Ad Spend Annually</p>
+</div>
+</div>
+
+<!-- Services Section with Illustrations -->
+<section class="py-16 px-4 bg-surface">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-12" data-aos="fade-up">
+<h2 class="text-black text-4xl font-black leading-tight tracking-tight mb-2">Core Services</h2>
+<div class="w-20 h-1 bg-accent mx-auto rounded-full mb-4"></div>
+<p class="text-black/70 max-w-2xl mx-auto">Purpose-built digital marketing solutions that stay true to your brand aesthetic.</p>
+</div>
+<div class="space-y-6">
+<div class="flex flex-col md:flex-row items-center gap-6 p-6 bg-white border border-secondary/60 rounded-2xl shadow-sm" data-aos="fade-up" data-aos-delay="50">
+<div class="flex-1 space-y-3 text-left">
+<span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-black">Social Media Marketing</span>
+<p class="text-black/80 text-sm">Campaign planning, content calendars, and community engagement that keep your brand consistent across channels.</p>
+</div>
+<div class="w-full md:w-60 flex justify-center md:justify-end">
+<svg width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="20" width="140" height="90" rx="12" fill="#ECF4E8" stroke="#A8BBA3" stroke-width="4"/>
+<rect x="24" y="36" width="112" height="12" rx="6" fill="#A8BBA3"/>
+<rect x="24" y="58" width="90" height="10" rx="5" fill="#D9CFC7"/>
+<rect x="24" y="78" width="72" height="10" rx="5" fill="#A8BBA3"/>
+<circle cx="170" cy="60" r="22" fill="#D9CFC7"/>
+<path d="M160 62l8 8 14-18" stroke="#313647" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-6 p-6 bg-white border border-secondary/60 rounded-2xl shadow-sm" data-aos="fade-up" data-aos-delay="120">
+<div class="flex-1 space-y-3 text-left">
+<span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-black">Pay-Per-Click Advertising</span>
+<p class="text-black/80 text-sm">Precise targeting, budget control, and conversion-focused creative to maximize every click.</p>
+</div>
+<div class="w-full md:w-60 flex justify-center md:justify-end">
+<svg width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="18" y="26" width="140" height="88" rx="10" fill="#ECF4E8" stroke="#A8BBA3" stroke-width="4"/>
+<rect x="34" y="44" width="54" height="12" rx="6" fill="#A8BBA3"/>
+<rect x="34" y="64" width="90" height="10" rx="5" fill="#D9CFC7"/>
+<rect x="34" y="82" width="60" height="10" rx="5" fill="#A8BBA3"/>
+<path d="M150 44h44v52h-44z" fill="#D9CFC7" stroke="#313647" stroke-width="3"/>
+<path d="M160 74l12 12 16-22" stroke="#313647" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-6 p-6 bg-white border border-secondary/60 rounded-2xl shadow-sm" data-aos="fade-up" data-aos-delay="190">
+<div class="flex-1 space-y-3 text-left">
+<span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-black">Web Design & Development</span>
+<p class="text-black/80 text-sm">Responsive sites built for speed, accessibility, and clear user journeys that convert.</p>
+</div>
+<div class="w-full md:w-60 flex justify-center md:justify-end">
+<svg width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="14" y="22" width="150" height="96" rx="12" fill="#ECF4E8" stroke="#A8BBA3" stroke-width="4"/>
+<rect x="30" y="40" width="118" height="12" rx="6" fill="#A8BBA3"/>
+<rect x="30" y="60" width="96" height="10" rx="5" fill="#D9CFC7"/>
+<rect x="30" y="78" width="70" height="10" rx="5" fill="#A8BBA3"/>
+<path d="M176 102h28" stroke="#313647" stroke-width="4" stroke-linecap="round"/>
+<path d="M192 82v40" stroke="#313647" stroke-width="4" stroke-linecap="round"/>
+</svg>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-6 p-6 bg-white border border-secondary/60 rounded-2xl shadow-sm" data-aos="fade-up" data-aos-delay="260">
+<div class="flex-1 space-y-3 text-left">
+<span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-black">Content Creation & Marketing</span>
+<p class="text-black/80 text-sm">Story-led assets, email nurture flows, and on-brand visuals that move audiences to act.</p>
+</div>
+<div class="w-full md:w-60 flex justify-center md:justify-end">
+<svg width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="16" y="24" width="148" height="92" rx="10" fill="#ECF4E8" stroke="#A8BBA3" stroke-width="4"/>
+<rect x="32" y="44" width="76" height="12" rx="6" fill="#A8BBA3"/>
+<rect x="32" y="64" width="104" height="10" rx="5" fill="#D9CFC7"/>
+<rect x="32" y="82" width="90" height="10" rx="5" fill="#A8BBA3"/>
+<circle cx="178" cy="70" r="16" fill="#D9CFC7"/>
+<path d="M170 70l6 6 10-12" stroke="#313647" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Meet the Team -->
+<div class="px-4 pt-8 pb-4 flex justify-between items-end">
+<div>
+<h2 class="text-black text-2xl font-black leading-tight tracking-tight">Our Experts</h2>
+<p class="text-black/70 text-sm mt-1">Led by industry veterans</p>
+</div>
+<button class="text-black text-sm font-bold">View All</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 pb-12">
+<!-- Team Member 1 -->
+<div class="w-full flex flex-col gap-3">
+<div class="w-full aspect-[4/5] bg-secondary/30 rounded-xl overflow-hidden  transition-all duration-300">
+<img alt="Nkwian Godwill Chia - CEO" class="w-full h-full object-cover" src="assets/1.jpg"/>
+</div>
+<div>
+<h4 class="text-black font-bold">Nkwian Godwill Chia</h4>
+<p class="text-black/70 text-xs font-medium uppercase tracking-widest mb-2">CEO</p>
+<p class="text-black/60 text-xs">Facebook & Google Ads • E-Commerce</p>
+</div>
+</div>
+<!-- Team Member 2 -->
+<div class="w-full flex flex-col gap-3">
+<div class="w-full aspect-[4/5] bg-secondary/30 rounded-xl overflow-hidden  transition-all duration-300">
+<img alt="Nde Nelly Anne - Marketing Manager" class="w-full h-full object-cover" src="assets/2.jpg"/>
+</div>
+<div>
+<h4 class="text-black font-bold">Nde Nelly Anne</h4>
+<p class="text-black/70 text-xs font-medium uppercase tracking-widest mb-2">Marketing Manager</p>
+<p class="text-black/60 text-xs">Influencer Marketing • PR</p>
+</div>
+</div>
+<!-- Team Member 3 -->
+<div class="w-full flex flex-col gap-3">
+<div class="w-full aspect-[4/5] bg-secondary/30 rounded-xl overflow-hidden  transition-all duration-300">
+<img alt="Azinwie Nelly - Social Media Manager" class="w-full h-full object-cover" src="assets/3.jpg"/>
+</div>
+<div>
+<h4 class="text-black font-bold">Azinwie Nelly</h4>
+<p class="text-black/70 text-xs font-medium uppercase tracking-widest mb-2">Social Media Manager</p>
+<p class="text-black/60 text-xs">Content Strategy</p>
+</div>
+</div>
+<!-- Team Member 4 -->
+<div class="w-full flex flex-col gap-3">
+<div class="w-full aspect-[4/5] bg-secondary/30 rounded-xl overflow-hidden  transition-all duration-300">
+<img alt="Fouodji N. Steve - SEO Specialist" class="w-full h-full object-cover" src="assets/4.jpg"/>
+</div>
+<div>
+<h4 class="text-black font-bold">Fouodji N. Steve</h4>
+<p class="text-black/70 text-xs font-medium uppercase tracking-widest mb-2">SEO Specialist</p>
+<p class="text-black/60 text-xs">SEO • SEM</p>
+</div>
+</div>
+</div>
+<!-- Bottom CTA -->
+<div class="p-6 m-4 bg-black border border-black/20 rounded-2xl flex flex-col gap-6 items-center text-center" data-aos="fade-up">
+<div class="flex flex-col gap-2">
+<h2 class="text-white text-2xl font-black">Ready to scale your business?</h2>
+<p class="text-white/80 text-sm">Schedule a 30-minute discovery call with our experts today.</p>
+</div>
+<button onclick="confetti({particleCount: 150, spread: 100, origin: { y: 0.8 }})" class="w-full max-w-xs h-12 bg-accent hover:bg-accent/90 text-black font-bold rounded-lg transition-all active:scale-95 shadow-lg shadow-accent/20 pulse-glow">
+                    Book Discovery Call
+                </button>
+</div>
+
+<!-- Our Process Section -->
+<section class="py-16 px-4">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-12" data-aos="fade-up">
+<h2 class="text-black text-3xl font-black mb-4">Our Proven Process</h2>
+<p class="text-black/70 max-w-2xl mx-auto">A systematic approach to digital excellence that has delivered results for over 500 clients worldwide.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Step 1 -->
+<div class="relative" data-aos="fade-up" data-aos-delay="100">
+<div class="card-shine scale-hover bg-white border border-secondary/60 rounded-xl p-6 shadow-sm">
+<div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4 float-animation">
+<span class="text-accent text-2xl font-black">01</span>
+</div>
+<h3 class="text-black font-bold text-lg mb-2">Discovery</h3>
+<p class="text-black/70 text-sm">Deep dive into your business goals, target audience, and competitive landscape.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative" data-aos="fade-up" data-aos-delay="200">
+<div class="card-shine scale-hover bg-white border border-secondary/60 rounded-xl p-6 shadow-sm">
+<div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4 float-animation-delayed">
+<span class="text-accent text-2xl font-black">02</span>
+</div>
+<h3 class="text-black font-bold text-lg mb-2">Strategy</h3>
+<p class="text-black/70 text-sm">Craft a data-driven roadmap tailored to your unique challenges and opportunities.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative" data-aos="fade-up" data-aos-delay="300">
+<div class="card-shine scale-hover bg-white border border-secondary/60 rounded-xl p-6 shadow-sm">
+<div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4 float-animation">
+<span class="text-accent text-2xl font-black">03</span>
+</div>
+<h3 class="text-black font-bold text-lg mb-2">Execute</h3>
+<p class="text-black/70 text-sm">Launch campaigns with precision, leveraging cutting-edge tools and techniques.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative" data-aos="fade-up" data-aos-delay="400">
+<div class="card-shine scale-hover bg-white border border-secondary/60 rounded-xl p-6 shadow-sm">
+<div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4 float-animation-delayed">
+<span class="text-accent text-2xl font-black">04</span>
+</div>
+<h3 class="text-black font-bold text-lg mb-2">Optimize</h3>
+<p class="text-black/70 text-sm">Continuous testing and refinement to maximize ROI and scale performance.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Interactive Tech Stack & Tools Section -->
+<section class="py-20 px-4 bg-surface relative overflow-hidden">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-12" data-aos="fade-up">
+<h2 class="text-black text-4xl font-black mb-4">Powered by Cutting-Edge Technology</h2>
+<p class="text-black/70 max-w-2xl mx-auto">Trusted platforms that keep campaigns measurable, repeatable, and ready to scale.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="bg-white border border-secondary/60 rounded-xl p-6 text-center shadow-sm" data-aos="fade-up" data-aos-delay="60">
+<div class="w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center bg-surface border border-secondary/80">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googleanalytics.svg" alt="Google Analytics" class="h-10 w-10" loading="lazy"/>
+</div>
+<h4 class="text-black font-bold text-sm mb-1">Google Analytics</h4>
+<p class="text-black/70 text-xs">Insight dashboards</p>
+</div>
+<div class="bg-white border border-secondary/60 rounded-xl p-6 text-center shadow-sm" data-aos="fade-up" data-aos-delay="120">
+<div class="w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center bg-surface border border-secondary/80">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/semrush.svg" alt="SEMrush" class="h-10 w-10" loading="lazy"/>
+</div>
+<h4 class="text-black font-bold text-sm mb-1">SEMrush</h4>
+<p class="text-black/70 text-xs">SEO research</p>
+</div>
+<div class="bg-white border border-secondary/60 rounded-xl p-6 text-center shadow-sm" data-aos="fade-up" data-aos-delay="180">
+<div class="w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center bg-surface border border-secondary/80">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hubspot.svg" alt="HubSpot" class="h-10 w-10" loading="lazy"/>
+</div>
+<h4 class="text-black font-bold text-sm mb-1">HubSpot</h4>
+<p class="text-black/70 text-xs">CRM & automation</p>
+</div>
+<div class="bg-white border border-secondary/60 rounded-xl p-6 text-center shadow-sm" data-aos="fade-up" data-aos-delay="240">
+<div class="w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center bg-surface border border-secondary/80">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mailchimp.svg" alt="Mailchimp" class="h-10 w-10" loading="lazy"/>
+</div>
+<h4 class="text-black font-bold text-sm mb-1">Mailchimp</h4>
+<p class="text-black/70 text-xs">Email journeys</p>
+</div>
+<div class="bg-white border border-secondary/60 rounded-xl p-6 text-center shadow-sm" data-aos="fade-up" data-aos-delay="300">
+<div class="w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center bg-surface border border-secondary/80">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/zapier.svg" alt="Zapier" class="h-10 w-10" loading="lazy"/>
+</div>
+<h4 class="text-black font-bold text-sm mb-1">Zapier</h4>
+<p class="text-black/70 text-xs">Workflow ops</p>
+</div>
+<div class="bg-white border border-secondary/60 rounded-xl p-6 text-center shadow-sm" data-aos="fade-up" data-aos-delay="360">
+<div class="w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center bg-surface border border-secondary/80">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shopify.svg" alt="Shopify" class="h-10 w-10" loading="lazy"/>
+</div>
+<h4 class="text-black font-bold text-sm mb-1">Shopify</h4>
+<p class="text-black/70 text-xs">Ecommerce</p>
+</div>
+<div class="bg-white border border-secondary/60 rounded-xl p-6 text-center shadow-sm" data-aos="fade-up" data-aos-delay="420">
+<div class="w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center bg-surface border border-secondary/80">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hootsuite.svg" alt="Hootsuite" class="h-10 w-10" loading="lazy"/>
+</div>
+<h4 class="text-black font-bold text-sm mb-1">Hootsuite</h4>
+<p class="text-black/70 text-xs">Social scheduling</p>
+</div>
+<div class="bg-white border border-secondary/60 rounded-xl p-6 text-center shadow-sm" data-aos="fade-up" data-aos-delay="480">
+<div class="w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center bg-surface border border-secondary/80">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/notion.svg" alt="Notion" class="h-10 w-10" loading="lazy"/>
+</div>
+<h4 class="text-black font-bold text-sm mb-1">Notion</h4>
+<p class="text-black/70 text-xs">Content ops</p>
+</div>
+</div>
+<div class="mt-12 relative" data-aos="fade-up">
+<div class="bg-black text-white rounded-2xl p-8 text-center shadow-md">
+<h3 class="text-2xl font-black mb-3">Always Evolving, Always Innovating</h3>
+<p class="text-white/80 text-sm max-w-2xl mx-auto">We continuously refine our stack to keep your marketing measurable, reliable, and ready for the next launch.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-16 px-4 bg-background-light">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-12" data-aos="fade-up">
+<h2 class="text-black text-3xl font-black mb-4">Why Choose Crelova creative</h2>
+<p class="text-black/70 max-w-2xl mx-auto">We're not just another agency. We're your strategic growth partner committed to your success.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Feature 1 -->
+<div class="card-shine scale-hover bg-white border border-secondary/60 rounded-xl p-6 shadow-sm" data-aos="flip-left" data-aos-delay="100">
+<div class="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-4 float-animation">
+<span class="material-symbols-outlined text-accent text-3xl">verified</span>
+</div>
+<h3 class="text-black font-bold text-lg mb-2">Expertise and Experience</h3>
+<p class="text-black/70 text-sm">Our team brings years of industry knowledge and proven expertise to deliver exceptional results.</p>
+</div>
+<!-- Feature 2 -->
+<div class="card-shine scale-hover bg-white border border-secondary/60 rounded-xl p-6 shadow-sm" data-aos="flip-left" data-aos-delay="200">
+<div class="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-4 float-animation-delayed">
+<span class="material-symbols-outlined text-accent text-3xl">analytics</span>
+</div>
+<h3 class="text-black font-bold text-lg mb-2">Results-Driven Approach</h3>
+<p class="text-black/70 text-sm">We focus on measurable outcomes that directly impact your business growth and success.</p>
+</div>
+<!-- Feature 3 -->
+<div class="card-shine scale-hover bg-white border border-secondary/60 rounded-xl p-6 shadow-sm" data-aos="flip-left" data-aos-delay="300">
+<div class="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-4 float-animation">
+<span class="material-symbols-outlined text-accent text-3xl">diversity_3</span>
+</div>
+<h3 class="text-black font-bold text-lg mb-2">Customized Strategies</h3>
+<p class="text-black/70 text-sm">Tailored solutions designed specifically for your unique business needs and goals.</p>
+</div>
+<!-- Feature 4 -->
+<div class="card-shine scale-hover bg-white border border-secondary/60 rounded-xl p-6 shadow-sm" data-aos="flip-left" data-aos-delay="100">
+<div class="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-4 float-animation-delayed">
+<span class="material-symbols-outlined text-accent text-3xl">support_agent</span>
+</div>
+<h3 class="text-black font-bold text-lg mb-2">Cutting-Edge Tools & Technology</h3>
+<p class="text-black/70 text-sm">We leverage the latest digital marketing tools to give you a competitive advantage.</p>
+</div>
+<!-- Feature 5 -->
+<div class="card-shine scale-hover bg-white border border-secondary/60 rounded-xl p-6 shadow-sm" data-aos="flip-left" data-aos-delay="200">
+<div class="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-4 float-animation">
+<span class="material-symbols-outlined text-accent text-3xl">rocket_launch</span>
+</div>
+<h3 class="text-black font-bold text-lg mb-2">Dedicated Support</h3>
+<p class="text-black/70 text-sm">Personalized attention and support throughout your digital marketing journey.</p>
+</div>
+<!-- Feature 6 -->
+<div class="card-shine scale-hover bg-white border border-secondary/60 rounded-xl p-6 shadow-sm" data-aos="flip-left" data-aos-delay="300">
+<div class="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-4 float-animation-delayed">
+<span class="material-symbols-outlined text-accent text-3xl">workspace_premium</span>
+</div>
+<h3 class="text-black font-bold text-lg mb-2">Innovation & Creativity</h3>
+<p class="text-black/70 text-sm">Fresh, creative approaches that set your brand apart from the competition.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-16 px-4">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-12" data-aos="fade-up">
+<h2 class="text-black text-3xl font-black mb-4">Frequently Asked Questions</h2>
+<p class="text-black/70 max-w-2xl mx-auto">Got questions? We've got answers. Here's what clients usually ask us.</p>
+</div>
+<div class="space-y-4">
+<!-- FAQ 1 -->
+<div class="card-shine bg-white border border-secondary/60 rounded-xl p-6 shadow-sm" data-aos="fade-right">
+<h3 class="text-black font-bold text-lg mb-2">How long does it take to see results?</h3>
+<p class="text-black/70 text-sm">Most clients start seeing measurable improvements within 30-60 days. However, significant ROI typically manifests within 3-6 months as campaigns mature and optimization takes effect.</p>
+</div>
+<!-- FAQ 2 -->
+<div class="card-shine bg-white border border-secondary/60 rounded-xl p-6 shadow-sm" data-aos="fade-left">
+<h3 class="text-black font-bold text-lg mb-2">What industries do you specialize in?</h3>
+<p class="text-black/70 text-sm">We've worked across diverse industries including e-commerce, SaaS, fintech, healthcare, and B2B services. Our data-driven approach adapts to any market sector.</p>
+</div>
+<!-- FAQ 3 -->
+<div class="card-shine bg-white border border-secondary/60 rounded-xl p-6 shadow-sm" data-aos="fade-right">
+<h3 class="text-black font-bold text-lg mb-2">Do you offer custom packages?</h3>
+<p class="text-black/70 text-sm">Absolutely! Every business is unique. We create tailored strategies and packages that align with your specific goals, budget, and growth objectives.</p>
+</div>
+<!-- FAQ 4 -->
+<div class="card-shine bg-white border border-secondary/60 rounded-xl p-6 shadow-sm" data-aos="fade-left">
+<h3 class="text-black font-bold text-lg mb-2">What makes you different from other agencies?</h3>
+<p class="text-black/70 text-sm">We're obsessed with results, not just metrics. Our transparent reporting, dedicated account management, and proven methodology set us apart. Plus, we only succeed when you succeed.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="py-20 px-4 bg-black" data-aos="zoom-in">
+<div class="max-w-4xl mx-auto text-center">
+<div class="inline-block mb-6 rotate-slow">
+<span class="material-symbols-outlined text-white text-6xl">rocket_launch</span>
+</div>
+<h2 class="text-white text-4xl md:text-5xl font-black mb-4">Let's Build Something Amazing Together</h2>
+<p class="text-white/85 text-lg mb-8 max-w-2xl mx-auto">Join hundreds of satisfied clients who have transformed their digital presence with Crelova creative.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a href="contact.html" onclick="confetti({particleCount: 200, spread: 120, origin: { y: 0.6 }})" class="bg-accent text-black px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:shadow-2xl transition-all active:scale-95">
+                        Get Started Today
+                    </a>
+<a href="ourservice.html" class="bg-white/10 text-white px-8 py-4 rounded-lg font-bold text-lg border-2 border-white/30 backdrop-blur-sm hover:bg-white/20 transition-all">
+                        Explore Services
+                    </a>
+</div>
+<div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-white/80 text-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+<span>No Long-term Contracts</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+<span>Free Consultation</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+<span>ROI Guarantee</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="mt-auto bg-white border-t border-secondary/60 py-12 px-6">
+<div class="max-w-6xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<img src="assets/logo.jpg" alt="Crelova creative Logo" class="h-8 w-auto rounded-lg"/>
+<h3 class="text-black text-base font-bold">Crelova creative</h3>
+</div>
+<p class="text-black/70 text-sm">Transforming vision into reality through innovative digital marketing solutions.</p>
+</div>
+<div>
+<h4 class="text-black font-bold text-sm mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="index.html" class="text-black/70 text-sm hover:text-accent transition-colors">Home</a></li>
+<li><a href="about.html" class="text-black/70 text-sm hover:text-accent transition-colors">About Us</a></li>
+<li><a href="ourservice.html" class="text-black/70 text-sm hover:text-accent transition-colors">Our Services</a></li>
+<li><a href="contact.html" class="text-black/70 text-sm hover:text-accent transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-black font-bold text-sm mb-4">Services</h4>
+<ul class="space-y-2">
+<li><a href="ourservice.html" class="text-black/70 text-sm hover:text-accent transition-colors">Social Media Marketing</a></li>
+<li><a href="ourservice.html" class="text-black/70 text-sm hover:text-accent transition-colors">SEO Services</a></li>
+<li><a href="ourservice.html" class="text-black/70 text-sm hover:text-accent transition-colors">PPC Advertising</a></li>
+<li><a href="ourservice.html" class="text-black/70 text-sm hover:text-accent transition-colors">Web Design & Development</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-black font-bold text-sm mb-4">Connect</h4>
+<div class="flex gap-3 mb-4">
+<span class="material-symbols-outlined text-black/70 hover:text-accent cursor-pointer transition-colors">public</span>
+<span class="material-symbols-outlined text-black/70 hover:text-accent cursor-pointer transition-colors">alternate_email</span>
+<span class="material-symbols-outlined text-black/70 hover:text-accent cursor-pointer transition-colors">share</span>
+</div>
+</div>
+</div>
+<div class="border-t border-secondary/60 pt-6">
+<p class="text-black/60 text-sm text-center">© 2026 Crelova creative. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+
+<!-- AOS Animation Library Initialization -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+    });
+    
+    // Confetti on page load
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }, 500);
+    });
+    
+    // Counter Animation for Metrics
+    function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-target'));
+        const duration = 2000;
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target + (target < 100 ? '' : '+');
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current) + (target < 100 ? '' : '+');
+            }
+        }, 16);
+    }
+    
+    // Intersection Observer for counters
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    document.querySelectorAll('.counter').forEach(counter => {
+        counterObserver.observe(counter);
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+    function openMobileMenu() {
+        mobileMenu.classList.remove('hidden');
+        setTimeout(() => {
+            mobileMenu.classList.remove('translate-x-full');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.add('translate-x-full');
+        setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+        }, 300);
+        document.body.style.overflow = '';
+    }
+
+    mobileMenuButton.addEventListener('click', openMobileMenu);
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+    // Close mobile menu when clicking on a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+</script>
+</body></html>

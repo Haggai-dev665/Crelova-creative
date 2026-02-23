@@ -1,0 +1,280 @@
+.aboutHero {
+  display: flex;
+  min-height: 400px;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 3rem 1.5rem;
+}
+
+@container (min-width: 480px) {
+  .aboutHeroWrapper {
+    padding: 1rem;
+  }
+  .aboutHero {
+    border-radius: 0.75rem;
+  }
+}
+
+.heroTag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background-color: rgba(59, 130, 246, 0.2);
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.heroTitle {
+  color: white;
+  font-size: 2.25rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  max-width: 36rem;
+}
+
+@media (min-width: 480px) {
+  .heroTitle {
+    font-size: 3rem;
+  }
+}
+
+.heroText {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.625;
+  max-width: 28rem;
+}
+
+.section {
+  padding: 2rem 1.5rem;
+}
+
+.sectionSurface {
+  background-color: var(--color-bg-light);
+  padding: 2rem 1.5rem;
+}
+
+.sectionTitle {
+  color: var(--color-text-main);
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  padding-bottom: 0.75rem;
+}
+
+.storyText {
+  color: rgba(15, 23, 42, 0.7);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.625;
+}
+
+.storyText + .storyText {
+  margin-top: 1rem;
+}
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .missionGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.missionCard {
+  background-color: white;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.missionIcon {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: rgba(59, 130, 246, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.missionIcon span {
+  color: var(--color-accent);
+  font-size: 1.875rem;
+}
+
+.missionTitle {
+  color: var(--color-text-main);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.missionDesc {
+  color: rgba(15, 23, 42, 0.7);
+  font-size: 0.875rem;
+  line-height: 1.625;
+}
+
+.teamHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.joinBtn {
+  color: var(--color-accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.joinBtn:hover {
+  text-decoration: underline;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .teamGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.teamMember {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.teamImgWrapper {
+  aspect-ratio: 1/1;
+  width: 100%;
+  background-color: #e2e8f0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.teamImgWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.teamName {
+  color: var(--color-text-main);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.teamRole {
+  color: rgba(15, 23, 42, 0.7);
+  font-size: 0.75rem;
+}
+
+.successSection {
+  padding: 3rem 1.5rem;
+}
+
+.successCard {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-accent);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.confettiDot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.confettiSquare {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  transform: rotate(45deg);
+}
+
+.bgSky { background-color: var(--color-sky); }
+.bgWhite { background-color: white; }
+.bgDark { background-color: var(--color-text-main); }
+
+.op40 { opacity: 0.4; }
+.op30 { opacity: 0.3; }
+.op20 { opacity: 0.2; }
+.op10 { opacity: 0.1; }
+
+.c1 { top: 1rem; left: 1.5rem; }
+.c2 { top: 3rem; left: 5rem; }
+.c3 { bottom: 2rem; left: 3rem; }
+.c4 { bottom: 1rem; right: 2.5rem; }
+.c5 { top: 1.5rem; right: 5rem; }
+.c6 { top: 50%; right: 1rem; }
+
+.successIcon {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.successTitle {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.025em;
+}
+
+.successDesc {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.625;
+}
+
+.successBtn {
+  background-color: white;
+  color: var(--color-accent);
+  padding: 0.75rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.successBtn:active {
+  transform: scale(0.95);
+}

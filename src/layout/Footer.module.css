@@ -1,0 +1,98 @@
+.footer {
+  margin-top: auto;
+  background-color: white;
+  border-top: 1px solid rgba(37, 99, 235, 0.2);
+  padding: 3rem 1.5rem;
+}
+
+.maxW {
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.brandFlex {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.brandFlex img {
+  height: 2rem;
+  width: auto;
+  border-radius: 0.5rem;
+}
+
+.brandFlex h3 {
+  color: var(--color-text-main);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.desc {
+  color: rgba(15, 23, 42, 0.7);
+  font-size: 0.875rem;
+}
+
+.column h4 {
+  color: var(--color-text-main);
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.column a {
+  color: rgba(15, 23, 42, 0.7);
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.column a:hover {
+  color: var(--color-accent);
+}
+
+.social {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.social span {
+  color: rgba(15, 23, 42, 0.7);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.social span:hover {
+  color: var(--color-accent);
+}
+
+.bottom {
+  border-top: 1px solid rgba(37, 99, 235, 0.2);
+  padding-top: 1.5rem;
+}
+
+.bottom p {
+  color: rgba(15, 23, 42, 0.6);
+  font-size: 0.875rem;
+  text-align: center;
+}

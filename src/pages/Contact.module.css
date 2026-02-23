@@ -1,0 +1,232 @@
+.headlineContainer {
+  padding: 1.5rem 1rem 0.5rem;
+}
+
+.headline {
+  color: var(--color-text-main);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.bodyContainer {
+  padding: 0 1rem 1rem;
+}
+
+.bodyText {
+  color: rgba(15, 23, 42, 0.7);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.inputGroup {
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.inputLabel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 10rem;
+}
+
+.labelText {
+  color: var(--color-text-main);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.inputField {
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: white;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  color: var(--color-text-main);
+  height: 3.5rem;
+  padding: 0.9375rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputField::placeholder {
+  color: rgba(15, 23, 42, 0.6);
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.textareaField {
+  min-height: 7.5rem;
+  resize: none;
+}
+
+.submitContainer {
+  padding: 1.5rem 1rem;
+}
+
+.submitBtn {
+  width: 100%;
+  background-color: var(--color-accent);
+  color: white;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.submitBtn:hover {
+  background-color: rgba(59, 130, 246, 0.9);
+}
+
+.submitBtnIcon {
+  font-size: 1.25rem;
+}
+
+.confettiWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  position: relative;
+  height: 3rem;
+  overflow: hidden;
+}
+
+.confettiInner {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.c1 { width: 0.75rem; height: 0.75rem; background-color: var(--color-accent); border-radius: 0.125rem; transform: rotate(12deg); }
+.c2 { width: 0.5rem; height: 1rem; background-color: rgba(15, 23, 42, 0.4); border-radius: 0.125rem; transform: rotate(-45deg); }
+.c3 { width: 1rem; height: 0.5rem; background-color: var(--color-accent); border-radius: 0.125rem; transform: rotate(45deg); }
+.c4 { width: 0.75rem; height: 0.75rem; background-color: var(--color-secondary); border-radius: 0.125rem; transform: rotate(-12deg); }
+.c5 { width: 0.5rem; height: 0.5rem; background-color: var(--color-accent); border-radius: 50%; }
+
+.divider {
+  height: 1px;
+  background-color: rgba(37, 99, 235, 0.2);
+  margin: 1.5rem 1rem;
+}
+
+.locationContainer {
+  padding: 0 1rem 3rem;
+}
+
+.locationTitle {
+  color: var(--color-text-main);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.mapWrapper {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  margin-bottom: 1rem;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+
+.mapImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.mapOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mapPin {
+  background-color: var(--color-accent);
+  padding: 0.75rem;
+  border-radius: 50%;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.mapPin span {
+  color: white;
+  font-size: 1.875rem;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.infoRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.infoIcon {
+  color: var(--color-accent);
+}
+
+.infoText {
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
+.infoSubtext {
+  color: rgba(15, 23, 42, 0.7);
+  font-size: 0.875rem;
+}
+
+.directionsWrapper {
+  margin-top: 1rem;
+}
+
+.directionsBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.directionsBtn:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.directionsIcon {
+  font-size: 0.875rem;
+}

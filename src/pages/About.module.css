@@ -158,6 +158,13 @@
   gap: 1rem;
 }
 
+.teamDescription{
+  color: rgba(1, 51, 165, 0.7);
+  font-size: 0.75rem;
+  line-height: 1.7;
+  text-align: justify;  
+}
+
 @media (min-width: 1024px) {
   .teamGrid {
     grid-template-columns: repeat(4, 1fr);

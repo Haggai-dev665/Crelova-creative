@@ -72,7 +72,8 @@ export default function About() {
               </div>
               <div>
                 <h4 className={styles.teamName}>Nkwian Godwill Chia</h4>
-                <p className={styles.teamRole}>CEO</p>
+                <p className={styles.teamRole}>Founder & CEO</p>
+                <p className={styles.teamDescription}>Digital Marketing Strategist with expertise in brand positioning, growth marketing, content strategy, adn web-based digital solutions</p>
               </div>
             </div>
             <div className={styles.teamMember}>
@@ -82,6 +83,8 @@ export default function About() {
               <div>
                 <h4 className={styles.teamName}>Nde Nelly Anne</h4>
                 <p className={styles.teamRole}>Marketing Manager</p>
+                <p className={styles.teamDescription}>Marketing, Virtual Assistant, Graphic designing, Public speaking, Content creation</p>
+
               </div>
             </div>
             <div className={styles.teamMember}>
@@ -99,7 +102,9 @@ export default function About() {
               </div>
               <div>
                 <h4 className={styles.teamName}>Fouodji N. Steve</h4>
-                <p className={styles.teamRole}>SEO Specialist</p>
+                <p className={styles.teamRole}>Design Lead Specialist</p>
+                <p className={styles.teamDescription}>A digital marketer with a strong focus on visual design and brand identity. As Design Lead, oversee the creative direction of projects, ensuring every design is clear, modern, and aligned with each client’s goals. Enjoy turning ideas into visuals that communicate effectively and leave a lasting impression.</p>
+
               </div>
             </div>
           </div>

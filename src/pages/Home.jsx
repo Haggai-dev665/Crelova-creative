@@ -201,7 +201,7 @@ export default function Home() {
           </div>
           <div>
             <h4 className={styles.teamName}>Nde Nelly Anne</h4>
-            <p className={styles.teamRole}>Marketing Manager</p>
+            <p className={styles.teamRole}>Marketing Lead</p>
             <p className={styles.teamExp}>Influencer Marketing • PR</p>
           </div>
         </div>
@@ -221,7 +221,7 @@ export default function Home() {
           </div>
           <div>
             <h4 className={styles.teamName}>Fouodji N. Steve</h4>
-            <p className={styles.teamRole}>SEO Specialist</p>
+            <p className={styles.teamRole}>Design Lead</p>
             <p className={styles.teamExp}>SEO • SEM</p>
           </div>
         </div>

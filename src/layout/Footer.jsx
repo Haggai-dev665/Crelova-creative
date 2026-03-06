@@ -26,10 +26,12 @@ export default function Footer() {
           <div className={styles.column}>
             <h4>Services</h4>
             <ul>
-              <li><Link to="/services">Social Media Marketing</Link></li>
-              <li><Link to="/services">SEO Services</Link></li>
-              <li><Link to="/services">PPC Advertising</Link></li>
-              <li><Link to="/services">Web Design & Development</Link></li>
+              <li><Link to="/services">Digital Marketing</Link></li>
+              <li><Link to="/services">Web Development & Digital Solutions</Link></li>
+              <li><Link to="/services">Graphic Design & Content Creation</Link></li>
+              <li><Link to="/services">Search Engine Optimization (SEO) & SEM</Link></li>
+              <li><Link to="/services">Email Marketing</Link></li>
+              <li><Link to="/services">Social Media Marketing & Management</Link></li>
             </ul>
           </div>
           <div className={styles.column}>

@@ -31,27 +31,33 @@ export default function Services() {
           </p>
           <ul className={styles.list}>
             <li className={styles.listItem}>
-              <span className={`material-symbols-outlined ${styles.listIcon}`}>check_circle</span>
+              {/* <span className={`material-icons ${styles.listIcon}`}>check_circle</span> */}
+              <i class="fa-solid fa-circle-check"></i>
               <span className={styles.listText}>Digital Marketing</span>
             </li>
             <li className={styles.listItem}>
-              <span className={`material-symbols-outlined ${styles.listIcon}`}>check_circle</span>
+              {/* <span className={`material-icons ${styles.listIcon}`}>check_circle</span> */}
+              <i class="fa-solid fa-circle-check"></i>
               <span className={styles.listText}>Web Development & Digital Solutions</span>
             </li>
             <li className={styles.listItem}>
-              <span className={`material-symbols-outlined ${styles.listIcon}`}>check_circle</span>
+              {/* <span className={`material-icons ${styles.listIcon}`}>check_circle</span> */}
+              <i class="fa-solid fa-circle-check"></i>
               <span className={styles.listText}>Graphic Design & Content Creation</span>
             </li>
             <li className={styles.listItem}>
-              <span className={`material-symbols-outlined ${styles.listIcon}`}>check_circle</span>
+              {/* <span className={`material-icons ${styles.listIcon}`}>check_circle</span> */}
+              <i class="fa-solid fa-circle-check"></i>
               <span className={styles.listText}>Search Engine Optimization (SEO) & SEM</span>
             </li>
             <li className={styles.listItem}>
-              <span className={`material-symbols-outlined ${styles.listIcon}`}>check_circle</span>
+              {/* <span className={`material-icons ${styles.listIcon}`}>check_circle</span> */}
+              <i class="fa-solid fa-circle-check"></i>
               <span className={styles.listText}>Email Marketing</span>
             </li>
             <li className={styles.listItem}>
-              <span className={`material-symbols-outlined ${styles.listIcon}`}>check_circle</span>
+              {/* <span className={`material-icons ${styles.listIcon}`}>check_circle</span> */}
+              <i class="fa-solid fa-circle-check"></i>
               <span className={styles.listText}>Social Media Marketing & Management</span>
             </li>
           </ul>
@@ -120,7 +126,7 @@ export default function Services() {
                 <img alt="Nde Nelly Anne - Marketing Manager" src="/assets/2.jpg"/>
               </div>
               <h4 className={styles.teamName}>Nde Nelly Anne</h4>
-              <p className={styles.teamRole}>Marketing Manager</p>
+              <p className={styles.teamRole}>Marketing Lead</p>
             </div>
             <div className={styles.teamCard}>
               <div className={styles.teamImgWrapper}>
@@ -134,7 +140,7 @@ export default function Services() {
                 <img alt="Fouodji N. Steve - SEO Specialist" src="/assets/4.jpg"/>
               </div>
               <h4 className={styles.teamName}>Fouodji N. Steve</h4>
-              <p className={styles.teamRole}>SEO Specialist</p>
+              <p className={styles.teamRole}>Design Lead</p>
             </div>
           </div>
         </section>

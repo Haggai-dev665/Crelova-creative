@@ -37,9 +37,18 @@ export default function Footer() {
           <div className={styles.column}>
             <h4>Connect</h4>
             <div className={styles.social}>
-              <span className="material-symbols-outlined">public</span>
-              <span className="material-symbols-outlined">alternate_email</span>
-              <span className="material-symbols-outlined">share</span>
+              <a href="https://www.linkedin.com/company/creative.catalyst/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i className="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="https://www.tiktok.com/@crelovacreative?_r=1&_t=ZS-95XNUBhxxyR" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <i className="fa-brands fa-tiktok"></i>
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61581113821223" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i className="fa-brands fa-facebook"></i>
+              </a>
+              <a href="https://www.instagram.com/crelovacreative?igsh=emo2cmFvMTZkOTh6" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i className="fa-brands fa-instagram"></i>
+              </a>
             </div>
           </div>
         </div>

@@ -104,7 +104,16 @@ export default function About() {
                 <h4 className={styles.teamName}>Fouodji N. Steve</h4>
                 <p className={styles.teamRole}>Design Lead Specialist</p>
                 <p className={styles.teamDescription}>A digital marketer with a strong focus on visual design and brand identity. As Design Lead, oversee the creative direction of projects, ensuring every design is clear, modern, and aligned with each client’s goals. Enjoy turning ideas into visuals that communicate effectively and leave a lasting impression.</p>
-
+              </div>
+            </div>
+            <div className={styles.teamMember}>
+              <div className={styles.teamImgWrapper}>
+                <img alt="Sofie Kedia - Content & Creative Lead" src="/assets/5.jpg"/>
+              </div>
+              <div>
+                <h4 className={styles.teamName}>Sofie Kedia</h4>
+                <p className={styles.teamRole}>Content & Creative Lead</p>
+                <p className={styles.teamDescription}>Specializes in graphic design and UI/UX, creating clear and engaging visual experiences. Works across video editing and social media to ensure every piece of content is consistent, impactful, and aligned with the brand.</p>
               </div>
             </div>
           </div>

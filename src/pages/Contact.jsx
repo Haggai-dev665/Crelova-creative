@@ -88,6 +88,28 @@ export default function Contact() {
               <span className={`material-symbols-outlined ${styles.directionsIcon}`}>north_east</span>
             </button>
           </div>
+
+          <div className={styles.socialSection}>
+            <h4 className={styles.socialTitle}>Follow Us</h4>
+            <div className={styles.socialLinks}>
+              <a href="https://www.linkedin.com/company/creative.catalyst/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
+                <i className="fa-brands fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://www.tiktok.com/@crelovacreative?_r=1&_t=ZS-95XNUBhxxyR" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="TikTok">
+                <i className="fa-brands fa-tiktok"></i>
+                <span>TikTok</span>
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61581113821223" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Facebook">
+                <i className="fa-brands fa-facebook"></i>
+                <span>Facebook</span>
+              </a>
+              <a href="https://www.instagram.com/crelovacreative?igsh=emo2cmFvMTZkOTh6" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Instagram">
+                <i className="fa-brands fa-instagram"></i>
+                <span>Instagram</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </>

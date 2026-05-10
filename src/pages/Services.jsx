@@ -142,6 +142,65 @@ export default function Services() {
               <h4 className={styles.teamName}>Fouodji N. Steve</h4>
               <p className={styles.teamRole}>Design Lead</p>
             </div>
+            <div className={styles.teamCard}>
+              <div className={styles.teamImgWrapper}>
+                <img alt="Sofie Kedia - Content & Creative Lead" src="/assets/5.jpg"/>
+              </div>
+              <h4 className={styles.teamName}>Sofie Kedia</h4>
+              <p className={styles.teamRole}>Content & Creative Lead</p>
+            </div>
+          </div>
+        </section>
+
+        <div className={styles.dividerWrapper}>
+          <div className={styles.divider}></div>
+        </div>
+
+        <section className={styles.caseStudiesSection}>
+          <div className={styles.caseStudiesHeader}>
+            <h2 className={styles.sectionTitle}>Case Studies</h2>
+            <p className={styles.sectionDesc}>
+              Real projects. Real results. See how we turn bold ideas into impactful digital experiences that move the needle.
+            </p>
+          </div>
+          <div className={styles.caseStudiesList}>
+            <div className={styles.caseStudyCard}>
+              <div className={styles.caseStudyImgWrapper}>
+                <img src="/assets/case_studies/1.jpg" alt="AI-Powered Creative Assistant for Artists" className={styles.caseStudyImg} />
+                <div className={styles.caseStudyBadge}>Hackathon · 48 hrs</div>
+              </div>
+              <div className={styles.caseStudyContent}>
+                <h3 className={styles.caseStudyTitle}>AI-Powered Creative Assistant for Artists</h3>
+                <p className={styles.caseStudyDesc}>
+                  Built during the CIMFest Hackathon in just 48 hours, this platform was designed to supercharge the creative workflow for independent artists. It brings together three core pillars — music creation, content production, and personal branding — all in one seamless experience. Artists can generate and refine lyrics using AI, receive intelligent feedback to improve their sound, and automatically produce platform-optimized captions, hashtags, and visual branding assets. Whether releasing a single or growing a fanbase, the assistant keeps your creative voice consistent while scaling your reach effortlessly.
+                </p>
+                <div className={styles.caseStudyTags}>
+                  <span className={styles.tag}>AI Integration</span>
+                  <span className={styles.tag}>Music & Content</span>
+                  <span className={styles.tag}>Personal Branding</span>
+                </div>
+                <p className={styles.caseStudyTagline}>Create smarter. Brand better. Stay consistent.</p>
+              </div>
+            </div>
+
+            <div className={styles.caseStudyCard}>
+              <div className={styles.caseStudyImgWrapper}>
+                <img src="/assets/case_studies/2.jpg" alt="Structured Digital Marketplace Platform" className={styles.caseStudyImg} />
+                <div className={`${styles.caseStudyBadge} ${styles.caseStudyBadgeAlt}`}>Digital Commerce</div>
+              </div>
+              <div className={styles.caseStudyContent}>
+                <h3 className={styles.caseStudyTitle}>Structured Digital Marketplace Platform</h3>
+                <p className={styles.caseStudyDesc}>
+                  A purpose-built digital marketplace designed to bridge the gap between opportunity and execution. The platform connects buyers and sellers through a thoughtfully structured ecosystem, while equipping individuals with the tools, systems, and guided processes needed to launch and grow sustainable online businesses. From storefront setup and inventory management to sales funnel optimization and business analytics, every feature is engineered to reduce friction and accelerate growth — empowering entrepreneurs at every stage to move with confidence and scale with clarity.
+                </p>
+                <div className={styles.caseStudyTags}>
+                  <span className={styles.tag}>E-Commerce</span>
+                  <span className={styles.tag}>Business Systems</span>
+                  <span className={styles.tag}>Growth Strategy</span>
+                </div>
+                <p className={styles.caseStudyTagline}>Connect. Build. Scale.</p>
+              </div>
+            </div>
           </div>
         </section>
 

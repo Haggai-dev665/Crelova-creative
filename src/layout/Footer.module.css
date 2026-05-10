@@ -76,14 +76,23 @@
   margin-bottom: 1rem;
 }
 
-.social span {
-  color: rgba(15, 23, 42, 0.7);
+.social a {
+  color: rgba(15, 23, 42, 0.6);
+  font-size: 1.125rem;
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: rgba(59, 130, 246, 0.08);
 }
 
-.social span:hover {
+.social a:hover {
   color: var(--color-accent);
+  background-color: rgba(59, 130, 246, 0.15);
 }
 
 .bottom {

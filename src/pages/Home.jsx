@@ -124,6 +124,26 @@ export default function Home() {
           <div className={styles.serviceList}>
             <div className={styles.serviceCard} data-aos="fade-up" data-aos-delay="50">
               <div className={styles.serviceText}>
+                <span className={styles.serviceTag}>Digital Marketing</span>
+                <p className={styles.serviceDesc}>Full-spectrum campaigns that build brand awareness, generate qualified leads, and drive revenue across every channel your audience uses.</p>
+              </div>
+              <div className={styles.serviceIllus}>
+                <svg width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="26" width="100" height="88" rx="12" fill="var(--color-bg-light)" stroke="var(--color-accent)" strokeWidth="4"/>
+                  <rect x="24" y="42" width="72" height="10" rx="5" fill="var(--color-primary)"/>
+                  <rect x="24" y="60" width="56" height="8" rx="4" fill="var(--color-secondary)"/>
+                  <rect x="24" y="76" width="40" height="8" rx="4" fill="var(--color-sky)"/>
+                  <circle cx="172" cy="54" r="28" fill="rgba(59,130,246,0.12)" stroke="var(--color-accent)" strokeWidth="3"/>
+                  <path d="M162 54 L170 44 L180 54 L170 64 Z" fill="var(--color-secondary)"/>
+                  <path d="M124 102 Q144 80 162 92 Q178 102 196 84" stroke="var(--color-primary)" strokeWidth="3" strokeLinecap="round" fill="none"/>
+                  <circle cx="124" cy="102" r="4" fill="var(--color-accent)"/>
+                  <circle cx="196" cy="84" r="4" fill="var(--color-accent)"/>
+                </svg>
+              </div>
+            </div>
+
+            <div className={styles.serviceCard} data-aos="fade-up" data-aos-delay="130">
+              <div className={styles.serviceText}>
                 <span className={styles.serviceTag}>Social Media Marketing</span>
                 <p className={styles.serviceDesc}>Campaign planning, content calendars, and community engagement that keep your brand consistent across channels.</p>
               </div>
@@ -139,7 +159,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className={styles.serviceCard} data-aos="fade-up" data-aos-delay="120">
+            <div className={styles.serviceCard} data-aos="fade-up" data-aos-delay="210">
               <div className={styles.serviceText}>
                 <span className={styles.serviceTag}>Pay-Per-Click Advertising</span>
                 <p className={styles.serviceDesc}>Precise targeting, budget control, and conversion-focused creative to maximize every click.</p>
@@ -156,7 +176,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className={styles.serviceCard} data-aos="fade-up" data-aos-delay="190">
+            <div className={styles.serviceCard} data-aos="fade-up" data-aos-delay="290">
               <div className={styles.serviceText}>
                 <span className={styles.serviceTag}>Web Design & Development</span>
                 <p className={styles.serviceDesc}>Responsive sites built for speed, accessibility, and clear user journeys that convert.</p>
@@ -223,6 +243,16 @@ export default function Home() {
             <h4 className={styles.teamName}>Fouodji N. Steve</h4>
             <p className={styles.teamRole}>Design Lead</p>
             <p className={styles.teamExp}>SEO • SEM</p>
+          </div>
+        </div>
+        <div className={styles.teamMember}>
+          <div className={styles.teamImgWrapper}>
+            <img alt="Sofie Kedia - Content & Creative Lead" src="/assets/5.jpg"/>
+          </div>
+          <div>
+            <h4 className={styles.teamName}>Sofie Kedia</h4>
+            <p className={styles.teamRole}>Content & Creative Lead</p>
+            <p className={styles.teamExp}>Graphic Design & UI/UX • Video Editing</p>
           </div>
         </div>
       </div>

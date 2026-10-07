@@ -14,6 +14,7 @@ export default function Contact() {
         title="Contact Us"
         description="Get in touch with Crelova creative. Schedule a consultation and let's discuss how we can grow your brand."
         url="/contact"
+        keywords="contact digital marketing agency, hire marketing agency, digital marketing consultation, contact Crelova creative, business growth strategy"
       />
       <div className={styles.headlineContainer}>
         <h1 className={styles.headline}>Let's grow your brand.</h1>

@@ -9,6 +9,7 @@ export default function About() {
       <SEO 
         title="About Us"
         description="Learn more about Crelova creative, our mission, vision, and the expert team driving results for businesses."
+        keywords="about Crelova creative, digital marketing team, marketing experts, digital agency history, digital marketing mission, marketing vision, Nkwian Godwill Chia"
         url="/about"
       />
       <div className={styles.aboutHeroWrapper}>

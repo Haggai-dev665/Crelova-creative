@@ -1,11 +1,15 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-export default function SEO({ title, description, url }) {
+export default function SEO({ title, description, keywords, url }) {
   const siteName = "Crelova creative";
   const defaultDescription = "Crelova creative is a dedicated digital marketing agency transforming your vision into reality through innovative marketing, SEO, and web development strategies.";
+  const defaultKeywords = "digital marketing agency, SEO services, web development, social media marketing, PPC advertising, content creation, brand strategy, online growth";
+  
   const fullTitle = title ? `${title} | ${siteName}` : `${siteName} - Transforming Vision into Reality`;
   const metaDescription = description || defaultDescription;
+  const metaKeywords = keywords || defaultKeywords;
+  
   const siteUrl = "https://crelovacreative.com";
   const pageUrl = url ? `${siteUrl}${url}` : siteUrl;
   const image = `${siteUrl}/assets/logo.jpg`;
@@ -14,6 +18,7 @@ export default function SEO({ title, description, url }) {
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={metaDescription} />
+      <meta name="keywords" content={metaKeywords} />
       <link rel="canonical" href={pageUrl} />
 
       {/* Open Graph */}

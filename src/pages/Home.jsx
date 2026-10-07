@@ -71,6 +71,7 @@ export default function Home() {
       <SEO 
         title="Digital Marketing Agency"
         description="Crelova creative helps businesses grow through comprehensive digital marketing, SEO, PPC, web development, and social media strategies."
+        keywords="digital marketing agency, top SEO company, web design services, social media management, PPC advertising, brand transformation, online business growth"
         url="/"
       />
       <div className={styles.homeHeroWrapper}>

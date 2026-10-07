@@ -9,6 +9,7 @@ export default function Services() {
       <SEO 
         title="Our Services"
         description="Explore our range of digital marketing services including SEO, PPC, social media management, content creation, and web development."
+        keywords="SEO services, PPC advertising, social media marketing, content creation, web development, email marketing, digital marketing solutions, online advertising campaigns"
         url="/services"
       />
       <main className={styles.main}>

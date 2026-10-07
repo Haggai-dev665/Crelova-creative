@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import styles from './About.module.css';
 
 export default function About() {
   return (
     <>
+      <SEO 
+        title="About Us"
+        description="Learn more about Crelova creative, our mission, vision, and the expert team driving results for businesses."
+        url="/about"
+      />
       <div className={styles.aboutHeroWrapper}>
         <div 
           className={styles.aboutHero} 

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import confetti from 'canvas-confetti';
+import SEO from '../components/SEO';
 import styles from './Home.module.css';
 
 export default function Home() {
@@ -67,6 +68,11 @@ export default function Home() {
 
   return (
     <>
+      <SEO 
+        title="Digital Marketing Agency"
+        description="Crelova creative helps businesses grow through comprehensive digital marketing, SEO, PPC, web development, and social media strategies."
+        url="/"
+      />
       <div className={styles.homeHeroWrapper}>
         <div className="relative overflow-hidden">
           <div className="confetti confetti-blue top-10 left-[10%] rotate-12"></div>

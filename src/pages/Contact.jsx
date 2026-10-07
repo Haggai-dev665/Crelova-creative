@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import styles from './Contact.module.css';
 
 export default function Contact() {
@@ -9,6 +10,11 @@ export default function Contact() {
 
   return (
     <>
+      <SEO 
+        title="Contact Us"
+        description="Get in touch with Crelova creative. Schedule a consultation and let's discuss how we can grow your brand."
+        url="/contact"
+      />
       <div className={styles.headlineContainer}>
         <h1 className={styles.headline}>Let's grow your brand.</h1>
       </div>

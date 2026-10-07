@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import styles from './Services.module.css';
 
 export default function Services() {
   return (
     <>
+      <SEO 
+        title="Our Services"
+        description="Explore our range of digital marketing services including SEO, PPC, social media management, content creation, and web development."
+        url="/services"
+      />
       <main className={styles.main}>
         <section className={styles.heroSection}>
           <h2 className={styles.heroTitle}>

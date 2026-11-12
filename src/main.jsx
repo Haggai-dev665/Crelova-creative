@@ -6,6 +6,8 @@ import './index.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
+import { HelmetProvider } from 'react-helmet-async'
+
 function Root() {
   useEffect(() => {
     AOS.init({
@@ -18,9 +20,11 @@ function Root() {
 
   return (
     <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <HelmetProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </HelmetProvider>
     </React.StrictMode>
   );
 }
